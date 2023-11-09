@@ -1,6 +1,6 @@
 <html>
     <head>
-      <script src="index.js"></script>
+      <script src="index.js" defer></script>
       <link rel="stylesheet" type="text/css" href="styles.css"> 
     </head>
     <body>
@@ -8,12 +8,12 @@
       <h1> To-Do List Maker </h1>
       <br />
       <hr />
-      <form id="form">
+      <form id="to-do-form">
         <p> Make to-do list below </p>
-        <input type="text" name="to-dos" placeholder="Type Your To-Dos Here" required />
+        <input type="text" name="toDos" placeholder="Type Your To-Dos Here" required />
         <button type="Submit">Submit</button>
       </form>
-      <p class="error-message"></p>
+      <p id="error-message"></p>
       <br />
       <section>
         <h3> Current To-Do List </h3>
