@@ -3,6 +3,110 @@
       <script src="index.js"></script>
     </head>
     <body>
-      <h1> CODE YOUR SOLUTION </h1>      
+      <h1>  </h1>      
     </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        li.completed {
+            text-decoration: line-through;
+        }
+
+        p.error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        button.delete {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My To-Dos</h1>
+
+    <form id="todoForm">
+        <input type="text" id="newTodo" placeholder="Add a new to-do" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p class="error" id="errorMessage"></p>
+
+    <ul id="todoList"></ul>
+
+    <script>
+        const todoForm = document.getElementById('todoForm');
+        const newTodoInput = document.getElementById('newTodo');
+        const errorMessage = document.getElementById('errorMessage');
+        const todoList = document.getElementById('todoList');
+
+        todoForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const newTodoText = newTodoInput.value.trim();
+
+            if (newTodoText === '') {
+                errorMessage.textContent = 'Error. Todo cannot be empty';
+            } else {
+                errorMessage.textContent = '';
+
+                const newTodoItem = document.createElement('li');
+                newTodoItem.textContent = newTodoText;
+
+                newTodoItem.addEventListener('click', function () {
+                    newTodoItem.classList.toggle('completed');
+                });
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.className = 'delete';
+
+                deleteButton.addEventListener('click', function () {
+                    todoList.removeChild(newTodoItem);
+                });
+
+                newTodoItem.appendChild(deleteButton);
+
+                todoList.appendChild(newTodoItem);
+
+                
+                newTodoInput.value = '';
+            }
+        });
+    </script>
+
+</body>
 </html>
