@@ -1,0 +1,16 @@
+The app will have the following items:
+
+An h1 title (e.g. "My To-Dos").
+A single ul tag, empty when the page is first loaded.
+A form for the user to add a new to-do, with a single text input and a submit button.
+And the following functionalities:
+
+When the user writes something in the form's text input area and clicks submit, the ul should update with a new li item at the bottom of the list. The page should not refresh.
+
+ Hints/Steps
+When the user writes nothing in the form's text input area and clicks submit, an error message (inside a p tag) should appear below the form.
+
+ Hints/Steps
+When the user clicks on one of the li items, the item should be crossed out, indicating that that to-do is complete. You will need to look at [element].style.textDecoration for the cross out effect. Look at all the different text decoration options.
+
+ Hints/Steps
