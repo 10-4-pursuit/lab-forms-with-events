@@ -1,6 +1,6 @@
 body {
 	font-family: Arial, sans-serif;
-	text-align: center;
+	text-align: left;
 	margin: 20px;
 }
 h1 {
@@ -10,13 +10,25 @@ form {
 	margin-top: 20px;
 }
 ul {
-	list-style-type: style type none;
+	list-style: none;
 	padding: 0;
 }
 li{
-	margin: 10px;
+	font-size: 30px;
 	padding: 10px;
-	border: 1px solid #ccc;
-	display: flex;
 	justify-content: space-between;
+	position: relative;
+}
+li::before{
+	content: '\2022';
+	color: #333;
+	font-size: 1.5em;
+	
+}
+
+li.completed{
+	text-decoration: line-through;
+}
+li button {
+	margin-left: 80%;
 }

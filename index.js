@@ -13,16 +13,21 @@ document.addEventListener(`DOMContentLoaded`, function () {
 			const li = document.createElement(`li`);
 			li.textContent = todoText;
 
+			li.addEventListener('click', function () {
+			completed(li);
+			});
+
 			const deleteButton = document.createElement(`button`);
 			deleteButton.textContent = `Delete`;
-			deleteButton.addEventListener(`click`, function (){
+			deleteButton.addEventListener('click', function (){
 				li.remove();
 			});
 
 			li.appendChild(deleteButton);
 			todoList.appendChild(li);
 			newTodoInput.value = '';
+		
 		}
 	}
-
-})
+});
+	
